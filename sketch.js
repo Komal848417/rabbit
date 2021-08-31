@@ -31,16 +31,12 @@ function draw() {
   
 
   // jump when the space key is pressed
-  if(keyDown("left")&& rabbit.x >= -100) {
-    rabbit.velocityX = -10;
-  }
+  rabbit.x=World.mouseX
+  
 
-  if(keyDown("right")&& rabbit.x >= 100) {
-    rabbit.velocityX = 10;
-    }
 
-    rabbit.velocityX = rabbit.velocityX + 0.8
 
+ 
   edges= createEdgeSprites();
   rabbit.collide(edges);
 
@@ -53,10 +49,10 @@ spawnApples()
     if(frameCount%80===0){
       apple=createSprite(100,100,5,5);
       apple.addImage(appleImg);
-      apple.x=Math.round(random(10,60))
-      apple.velocityy=-3;
+      apple.y=Math.round(random(10,60))
+      apple.velocityY= 10;
       apple.depth=rabbit.depth
       rabbit.depth=rabbit.depth+1
-      apple.scale = 0.4
+      apple.scale = 0.1
     }  
   }
